@@ -1,9 +1,5 @@
 /* Minimal CSS Reset */
-
-html {
-    box-sizing: border-box;
-    font-size: 12px;
-}
+html { box-sizing: border-box; font-size: 12px;}
 
 *, *:before, *:after {
     box-sizing: inherit;
@@ -109,7 +105,7 @@ main > .profile {
 /* Theme */
 
 main {
-    background: #303F9F;
+    background: #050100;
     color: #FAFAFA;
 }
 
@@ -117,6 +113,6 @@ main {
     color: #FAFAFA;
 }
 
-.icons-social a svg path{
+.icons-social a svg path {
     fill: #FAFAFA;
 }
