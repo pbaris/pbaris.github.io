@@ -1,5 +1,8 @@
-/* Minimal CSS Reset */
-html { box-sizing: border-box; font-size: 12px;}
+/*region Minimal CSS Reset */
+html {
+    box-sizing: border-box;
+    font-size: 12px;
+}
 
 *, *:before, *:after {
     box-sizing: inherit;
@@ -19,9 +22,9 @@ img {
     max-width: 100%;
     height: auto;
 }
+/*endregion*/
 
-/* Typography */
-
+/*region Typography */
 html {
     font-family: 'Roboto', sans-serif;
 }
@@ -49,13 +52,9 @@ html {
         font-size: 20px;
     }
 }
+/*endregion*/
 
-.icons-social i {
-    font-size: 3em;
-}
-
-/* Custom Styles */
-
+/*region Custom */
 main {
     display: flex;
     flex-direction: column;
@@ -77,7 +76,8 @@ main > .tagline {
     font-weight: 100;
 }
 
-main > .profile {
+main > .profile { padding-top:2em;}
+main > .profile img {
     width: auto;
     height: auto;
     margin-left: auto;
@@ -86,33 +86,6 @@ main > .profile {
     max-width:200px;
 }
 
-.icons-social i {
-    padding: 10px;
-}
-
-.devto {
-    margin-bottom: -0.20rem;
-}
-
-.devto svg {
-    margin-bottom: -0.20rem;
-    margin-left: 0.675rem;;
-    width: 2.65rem;
-    height: 2.65rem;
-}
-
-
-/* Theme */
-
-main {
-    background: #050100;
-    color: #FAFAFA;
-}
-
-.icons-social a {
-    color: #FAFAFA;
-}
-
-.icons-social a svg path {
-    fill: #FAFAFA;
-}
+.icons { padding-bottom:5em; }
+.icons img { width:64px; padding:10px 5px; }
+/*endregion*/
