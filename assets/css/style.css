@@ -104,4 +104,5 @@ img[src$="github.svg"]:hover {filter: invert(0%) sepia(3%) saturate(1041%) hue-r
 img[src$="stackoverflow.svg"]:hover {filter: invert(67%) sepia(37%) saturate(6025%) hue-rotate(346deg) brightness(102%) contrast(92%);}
 img[src$="linkedin.svg"]:hover {filter: invert(25%) sepia(75%) saturate(1960%) hue-rotate(198deg) brightness(94%) contrast(99%);}
 img[src$="twitter.svg"]:hover {filter: invert(37%) sepia(82%) saturate(1364%) hue-rotate(189deg) brightness(117%) contrast(90%);}
+img[src$="pao.svg"]:hover {filter: invert(17%) sepia(95%) saturate(3320%) hue-rotate(157deg) brightness(90%) contrast(101%);}
 /*endregion*/
