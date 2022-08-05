@@ -87,22 +87,6 @@ main > .profile img {
 }
 
 main > .icons { margin: 1.5rem 0; }
-main > .icons img { width:64px; padding:10px 5px; }
-
-img[src$="java.svg"]:hover {filter: invert(23%) sepia(98%) saturate(2032%) hue-rotate(174deg) brightness(93%) contrast(108%);}
-img[src$="spring.svg"]:hover {filter: invert(69%) sepia(13%) saturate(1751%) hue-rotate(53deg) brightness(87%) contrast(97%);}
-img[src$="html5.svg"]:hover {filter: invert(46%) sepia(38%) saturate(7092%) hue-rotate(348deg) brightness(93%) contrast(90%);}
-img[src$="css3.svg"]:hover {filter: invert(32%) sepia(54%) saturate(1468%) hue-rotate(177deg) brightness(100%) contrast(91%);}
-img[src$="javascript.svg"]:hover {filter: invert(98%) sepia(66%) saturate(2943%) hue-rotate(339deg) brightness(101%) contrast(94%);}
-img[src$="mysql.svg"]:hover {filter: invert(43%) sepia(47%) saturate(490%) hue-rotate(163deg) brightness(93%) contrast(91%);}
-img[src$="mariadb.svg"]:hover {filter: invert(12%) sepia(67%) saturate(2213%) hue-rotate(170deg) brightness(92%) contrast(101%);}
-img[src$="microsoftsqlserver.svg"]:hover {filter: invert(23%) sepia(93%) saturate(2303%) hue-rotate(348deg) brightness(85%) contrast(87%);}
-img[src$="apachesolr.svg"]:hover {filter: invert(47%) sepia(68%) saturate(7086%) hue-rotate(354deg) brightness(91%) contrast(86%);}
-img[src$="git.svg"]:hover {filter: invert(37%) sepia(75%) saturate(2013%) hue-rotate(343deg) brightness(97%) contrast(93%);}
-img[src$="intellijidea.svg"]:hover {filter: invert(43%) sepia(63%) saturate(504%) hue-rotate(168deg) brightness(92%) contrast(89%);}
-img[src$="github.svg"]:hover {filter: invert(0%) sepia(3%) saturate(1041%) hue-rotate(344deg) brightness(105%) contrast(82%);}
-img[src$="stackoverflow.svg"]:hover {filter: invert(67%) sepia(37%) saturate(6025%) hue-rotate(346deg) brightness(102%) contrast(92%);}
-img[src$="linkedin.svg"]:hover {filter: invert(25%) sepia(75%) saturate(1960%) hue-rotate(198deg) brightness(94%) contrast(99%);}
-img[src$="twitter.svg"]:hover {filter: invert(37%) sepia(82%) saturate(1364%) hue-rotate(189deg) brightness(117%) contrast(90%);}
-img[src$="pao.svg"]:hover {filter: invert(17%) sepia(95%) saturate(3320%) hue-rotate(157deg) brightness(90%) contrast(101%);}
+main > .icons img { width:64px; padding:10px 5px; filter: grayscale(100%);}
+main > .icons img:hover { filter: none;}
 /*endregion*/
