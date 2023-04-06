@@ -75,7 +75,7 @@ searchbox_title_color = title_color
 searchbox_border_color = border_color
 
 # File position indicator color
-position_indicator_color = button_key_inactive_color
+position_indicator_color = title_color
 
 # Menu box color
 menubox_color = dialog_color
@@ -108,7 +108,7 @@ check_color = title_color
 check_selected_color = button_active_color
 
 # Up arrow color
-uarrow_color = button_key_inactive_color
+uarrow_color = title_color
 
 # Down arrow color
 darrow_color = uarrow_color
