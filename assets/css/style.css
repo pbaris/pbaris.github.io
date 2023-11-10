@@ -87,6 +87,6 @@ main > .profile img {
 }
 
 main > .icons { margin: 1.5rem 0; }
-main > .icons img { width:64px; padding:10px 5px; filter: grayscale(100%);}
+main > .icons img {width:64px;aspect-ratio: 1;height: auto;transition: transform 0.3s;transition-delay: 0.2s;padding:10px 5px;filter: grayscale(100%);}
 main > .icons img:hover { filter: none;}
 /*endregion*/
