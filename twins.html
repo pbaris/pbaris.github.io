@@ -64,10 +64,13 @@
             <div id="timer2"></div>
         </div>
     </div>
+    <button id="toggleButton" style="margin-top: 1rem; padding: 0.5rem 1rem;">⏸️ Παύση</button>
 
     <script>
         const startDate = new Date('2025-03-19T09:28:00');
-
+        let interval1, interval2;
+        let running = true
+        
         function updateTimer1() {
             const now = new Date();
             const diff = now - startDate;
@@ -114,11 +117,30 @@
             `;
         }
 
-        setInterval(updateTimer1, 1000);
-        updateTimer1();
+        function startTimers() {
+            updateTimer1();
+            updateTimer2();
+            interval1 = setInterval(updateTimer1, 1000);
+            interval2 = setInterval(updateTimer2, 1000);
+        }
+    
+        function stopTimers() {
+            clearInterval(interval1);
+            clearInterval(interval2);
+        }
+    
+        document.getElementById("toggleButton").addEventListener("click", function () {
+            if (running) {
+                stopTimers();
+                this.textContent = '▶️ Συνέχεια';
+            } else {
+                startTimers();
+                this.textContent = '⏸️ Παύση';
+            }
+            running = !running;
+        });
 
-        setInterval(updateTimer2, 1000);
-        updateTimer2();
+        startTimers();
     </script>
 </body>
 </html>
