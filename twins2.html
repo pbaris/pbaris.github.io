@@ -22,10 +22,14 @@
             padding: 1rem;
         }
 
-        @media (max-width: 768px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
+        p {
+            display: flex;
+            align-items: center;
+        }
+
+        .label {
+            min-width: 100px;
+            font-weight: bold;
         }
         
         .card {
@@ -34,7 +38,13 @@
             border-radius: 12px;
             padding: 1rem;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-          }
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -79,27 +89,13 @@
         }
 
          function updateTimer2() {
-            const now = new Date();
-            let diff = now - startDate;
-    
             const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
-            diff -= years * 365.25 * 24 * 60 * 60 * 1000;
-    
-            const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.44)); // average month
-            diff -= months * 30.44 * 24 * 60 * 60 * 1000;
-    
-            const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const weeks = Math.floor(totalDays / 7);
-            const days = totalDays % 7;
-            diff -= totalDays * 24 * 60 * 60 * 1000;
-    
-            const hours = Math.floor(diff / (1000 * 60 * 60));
-            diff -= hours * 60 * 60 * 1000;
-    
-            const minutes = Math.floor(diff / (1000 * 60));
-            diff -= minutes * 60 * 1000;
-    
-            const seconds = Math.floor(diff / 1000);
+            const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24 * 30.42));
+            const weeks = Math.floor((diff % (1000 * 60 * 60 * 24 * 30.42)) / (1000 * 60 * 60 * 24 * 7));
+            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
     
             document.getElementById("timer2").innerHTML = `
                 <p><span class="label">Χρόνια:</span> ${years}</p>
