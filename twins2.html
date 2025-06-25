@@ -68,13 +68,13 @@
 
             // Εμφάνιση αποτελέσματος
             document.getElementById('timer1').innerHTML = `
-                ${years} ${years === 1 ? 'χρόνο' : 'χρόνια'}, <br>
-                ${months} ${months === 1 ? 'μήνα' : 'μήνες'}, <br>
-                ${weeks} ${weeks === 1 ? 'εβδομάδα' : 'εβδομάδες'}, <br>
-                ${days} ${days === 1 ? 'ημέρα' : 'ημέρες'}, <br>
-                ${hours} ${hours === 1 ? 'ώρα' : 'ώρες'}, <br>
-                ${minutes} ${minutes === 1 ? 'λεπτό' : 'λεπτά'}, <br>
-                ${seconds} ${seconds === 1 ? 'δευτερόλεπτο' : 'δευτερόλεπτα'}
+                <p><span class="label">Χρόνια:</span> ${years}</p>
+                <p><span class="label">Μήνες:</span> ${months}</p>
+                <p><span class="label">Εβδομάδες:</span> ${weeks}</p>
+                <p><span class="label">Ημέρες:</span> ${days}</p>
+                <p><span class="label">Ώρες:</span> ${hours}</p>
+                <p><span class="label">Λεπτά:</span> ${minutes}</p>
+                <p><span class="label">Δευτερόλεπτα:</span> ${seconds}</p>
             `;
         }
 
@@ -102,14 +102,14 @@
             const seconds = Math.floor(diff / 1000);
     
             document.getElementById("timer2").innerHTML = `
-            <p><span class="label">Χρόνια:</span> ${years}</p>
-            <p><span class="label">Μήνες:</span> ${months}</p>
-            <p><span class="label">Εβδομάδες:</span> ${weeks}</p>
-            <p><span class="label">Ημέρες:</span> ${days}</p>
-            <p><span class="label">Ώρες:</span> ${hours}</p>
-            <p><span class="label">Λεπτά:</span> ${minutes}</p>
-            <p><span class="label">Δευτερόλεπτα:</span> ${seconds}</p>
-          `;
+                <p><span class="label">Χρόνια:</span> ${years}</p>
+                <p><span class="label">Μήνες:</span> ${months}</p>
+                <p><span class="label">Εβδομάδες:</span> ${weeks}</p>
+                <p><span class="label">Ημέρες:</span> ${days}</p>
+                <p><span class="label">Ώρες:</span> ${hours}</p>
+                <p><span class="label">Λεπτά:</span> ${minutes}</p>
+                <p><span class="label">Δευτερόλεπτα:</span> ${seconds}</p>
+              `;
         }
 
         setInterval(updateTimer1, 1000);
