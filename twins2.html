@@ -7,12 +7,25 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         .card {
@@ -25,13 +38,15 @@
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Συνολικός χρόνος που πέρασε</h1>
-        <div id="timer1"></div>
-    </div>
-    <div class="card">
-        <h1>Χρόνος που πέρασε</h1>
-        <div id="timer2"></div>
+    <div class="grid">
+        <div class="card">
+            <h1>Συνολικός χρόνος που πέρασε</h1>
+            <div id="timer1"></div>
+        </div>
+        <div class="card">
+            <h1>Χρόνος που πέρασε</h1>
+            <div id="timer2"></div>
+        </div>
     </div>
 
     <script>
@@ -63,29 +78,38 @@
             `;
         }
 
-        function updateTimer2() {
+         function updateCounter() {
             const now = new Date();
-            const diff = now - startDate;
-
-            // Υπολογισμοί
+            let diff = now - startDate;
+    
             const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
-            const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24 * 30.42));
-            const weeks = Math.floor((diff % (1000 * 60 * 60 * 24 * 30.42)) / (1000 * 60 * 60 * 24 * 7));
-            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-            // Εμφάνιση αποτελέσματος
-            document.getElementById('timer2').innerHTML = `
-                ${years} ${years === 1 ? 'χρόνο' : 'χρόνια'}, 
-                ${months} ${months === 1 ? 'μήνα' : 'μήνες'}, 
-                ${weeks} ${weeks === 1 ? 'εβδομάδα' : 'εβδομάδες'}, 
-                ${days} ${days === 1 ? 'ημέρα' : 'ημέρες'}, 
-                ${hours} ${hours === 1 ? 'ώρα' : 'ώρες'}, 
-                ${minutes} ${minutes === 1 ? 'λεπτό' : 'λεπτά'}, 
-                ${seconds} ${seconds === 1 ? 'δευτερόλεπτο' : 'δευτερόλεπτα'}
-            `;
+            diff -= years * 365.25 * 24 * 60 * 60 * 1000;
+    
+            const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.44)); // average month
+            diff -= months * 30.44 * 24 * 60 * 60 * 1000;
+    
+            const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const weeks = Math.floor(totalDays / 7);
+            const days = totalDays % 7;
+            diff -= totalDays * 24 * 60 * 60 * 1000;
+    
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            diff -= hours * 60 * 60 * 1000;
+    
+            const minutes = Math.floor(diff / (1000 * 60));
+            diff -= minutes * 60 * 1000;
+    
+            const seconds = Math.floor(diff / 1000);
+    
+            document.getElementById("timer2").innerHTML = `
+            <p><span class="label">Χρόνια:</span> ${years}</p>
+            <p><span class="label">Μήνες:</span> ${months}</p>
+            <p><span class="label">Εβδομάδες:</span> ${weeks}</p>
+            <p><span class="label">Ημέρες:</span> ${days}</p>
+            <p><span class="label">Ώρες:</span> ${hours}</p>
+            <p><span class="label">Λεπτά:</span> ${minutes}</p>
+            <p><span class="label">Δευτερόλεπτα:</span> ${seconds}</p>
+          `;
         }
 
         setInterval(updateTimer1, 1000);
